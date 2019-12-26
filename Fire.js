@@ -9,7 +9,14 @@ class Fire {
     init = () => {
         if(!firebase.apps.length) {
             firebase.initializeApp({
-
+                apiKey: "AIzaSyCJOPk-wEZdouB9D3pnm-akrkCpAYJrcHk",
+                authDomain: "chatapp-ac82b.firebaseapp.com",
+                databaseURL: "https://chatapp-ac82b.firebaseio.com",
+                projectId: "chatapp-ac82b",
+                storageBucket: "chatapp-ac82b.appspot.com",
+                messagingSenderId: "477616937459",
+                appId: "1:477616937459:web:57cf2b7e3a88ca76f79a86",
+                measurementId: "G-BNHSRH503Y"
             })
         }
     }
@@ -44,9 +51,25 @@ class Fire {
             createdAt,
             text,
             user
-        }
+        };
+    };
+
+    get = callback => {
+        this.db.on('child_added', snapshot => callback(this.parse(snapshot)));
+    };
+
+    off() {
+        this.db.off()
+
+
     }
     get db() {
         return firebase.database().ref("messages")
     }
+
+    get uid() {
+        return (firebase.auth().currentUser || {}).uid;
+    }
 }
+
+export default new Fire();
