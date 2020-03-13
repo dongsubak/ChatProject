@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-
+import config from './config'
 class Fire {
     constructor() {
         this.init()
@@ -8,16 +8,7 @@ class Fire {
 
     init = () => {
         if(!firebase.apps.length) {
-            firebase.initializeApp({
-                apiKey: "AIzaSyCJOPk-wEZdouB9D3pnm-akrkCpAYJrcHk",
-                authDomain: "chatapp-ac82b.firebaseapp.com",
-                databaseURL: "https://chatapp-ac82b.firebaseio.com",
-                projectId: "chatapp-ac82b",
-                storageBucket: "chatapp-ac82b.appspot.com",
-                messagingSenderId: "477616937459",
-                appId: "1:477616937459:web:57cf2b7e3a88ca76f79a86",
-                measurementId: "G-BNHSRH503Y"
-            })
+            firebase.initializeApp(config)
         }
     }
 
