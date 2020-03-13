@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from "react-native";
-import { Ionicons } from '@expo/vector-icons'
-
+// import { Ionicons } from '@expo/vector-icons'
+// <Ionicons name="md-arrow-round-forward" size={24} color="#FFF" />
 export default class ChatScreen extends React.Component {
     state = {
         name: ""
@@ -32,7 +32,7 @@ export default class ChatScreen extends React.Component {
                     />
                     <View style={{alignItems: "flex-end", marginTop: 64}}>
                         <TouchableOpacity style={styles.continue} onPress={this.continue}>
-                            <Ionicons name="md-arrow-round-forward" size={24} color="#FFF" />
+                            <Text name="md-arrow-round-forward" size={24} color="#FFF" />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -75,9 +75,9 @@ const styles = StyleSheet.create({
         width: 70,
         height: 70,
         borderRadius: 70 / 2,
-        backgroundColor: "#9075E3"
+        backgroundColor: "#9075E3",
         alignItems: "center",
-        justifyContent: "center"x
+        justifyContent: "center"
     }
 });
 
